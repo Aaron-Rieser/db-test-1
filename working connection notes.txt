@@ -1,0 +1,16 @@
+const {Client} = require('pg')
+const client = new Client({
+    user: "postgres",
+    password: "Fifthestate",
+    host: "localhost", 
+    port: 5432,
+    database: "DealCarte"
+})
+// localhost works for now -- if needed, machine name DESKTOP-OTBE5QR
+client.connect()
+.then (() => console.log("Connected succesfully"))
+.catch(e => console.log(e))
+.finally(() => client.end())
+
+// this works as a base connection 
+// 10-26-11:52pm
